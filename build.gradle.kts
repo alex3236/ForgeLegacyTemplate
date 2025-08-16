@@ -12,6 +12,8 @@ plugins {
 
 val baseGroup: String by project
 val mcVersion: String by project
+val mcpVersion: String by project
+val forgeVersion: String by project
 val version: String by project
 val mixinGroup = "$baseGroup.mixin"
 val modid: String by project
@@ -74,9 +76,9 @@ val shadowImpl: Configuration by configurations.creating {
 }
 
 dependencies {
-    minecraft("com.mojang:minecraft:1.8.9")
-    mappings("de.oceanlabs.mcp:mcp_stable:22-1.8.9")
-    forge("net.minecraftforge:forge:1.8.9-11.15.1.2318-1.8.9")
+    minecraft("com.mojang:minecraft:${mcVersion}")
+    mappings("de.oceanlabs.mcp:mcp_stable:${mcpVersion}")
+    forge("net.minecraftforge:forge:${forgeVersion}")
 
     // If you don't want mixins, remove these lines
     shadowImpl("org.spongepowered:mixin:0.7.11-SNAPSHOT") {
