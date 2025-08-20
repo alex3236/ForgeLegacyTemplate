@@ -67,7 +67,7 @@ sourceSets.main {
 repositories {
     mavenCentral()
     maven("https://repo.spongepowered.org/maven/")
-    maven("https://jitpack.io") // For MixinExtras
+    maven("https://jitpack.io") // For MixinExtras dependency
     // If you don't want to log in with your real minecraft account, remove this line
     maven("https://pkgs.dev.azure.com/djtheredstoner/DevAuth/_packaging/public/maven/v1")
 }
@@ -87,7 +87,8 @@ dependencies {
     }
     annotationProcessor("org.spongepowered:mixin:0.8.5-SNAPSHOT")
 
-    // MixinExtras support
+    // MixinExtras support - provides additional injection types like @WrapOperation, @WrapWithCondition, etc.
+    // If you don't want MixinExtras, remove these lines
     shadowImpl("com.github.LlamaLad7:MixinExtras:0.2.0")
     annotationProcessor("com.github.LlamaLad7:MixinExtras:0.2.0")
 
