@@ -30,6 +30,23 @@ are used by the build system but *do not work* in a normal forge installation.
 If you don't want mixins (which allow for modifying vanilla code), then you can remove the references to mixins from
 the `build.gradle.kts` at the lines specified with comments and the `com.example.mixin` package.
 
+This template includes [MixinExtras](https://github.com/LlamaLad7/MixinExtras) support, which provides additional powerful 
+injection types like `@WrapOperation`, `@WrapWithCondition`, `@ModifyExpressionValue`, and more. See the examples in 
+`MixinGuiMainMenuExtras.java` and `MixinExtrasExamples.java` for usage. If you don't want MixinExtras, remove the 
+MixinExtras dependency lines from `build.gradle.kts`.
+
+### MixinExtras Features
+
+MixinExtras provides several advanced injection types:
+
+- **@WrapOperation**: Wrap method calls to modify parameters or return values
+- **@WrapWithCondition**: Conditionally prevent method calls from executing  
+- **@ModifyExpressionValue**: Modify the return value of expressions and method calls
+- **@ModifyReceiver**: Modify the receiver (this) of method calls
+- **@ModifyReturnValue**: Modify the return value of methods
+
+For more information, see the [MixinExtras documentation](https://github.com/LlamaLad7/MixinExtras/wiki).
+
 If you don't want access transformers (which allow for making methods public/non-final) you can delete the
 `accesstransformer.cfg` file. If you make a change to the `accesstransformers.cfg` you might need to rebuild your
 project using `./gradlew build --refresh-dependencies`.
